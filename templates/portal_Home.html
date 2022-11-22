@@ -1,0 +1,609 @@
+{% extends "base.html" %}
+{% block content %}
+    <!--slider-home-->
+    <div class="slider">
+      <div class="slider-container">
+        <div class="slider_item">
+          <img src="/static/img/iback.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="iback">
+          <div class="text_box">
+              <h2 class="S_title">LET’S DRAW SOME ARTS !</h2>
+              <span class="dynamic" id="text"></span>
+          </div>
+        </div>
+        <div class="slider_item">
+          <img src="/static/img/back.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="iback">
+          <div class="text_box">
+            <h2 class="S_title">LET’S DRAW SOME ARTS !</h2>
+            <span class="dynamic" id="text_1">Web Designer & Developer.</span>
+          </div>
+        </div>
+        <div class="slider_item">
+          <img src="/static/img/iback.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="iback">
+          <div class="text_box">
+              <h2 class="S_title">LET’S DRAW SOME ARTS !</h2>
+              <span class="dynamic" id=" text_1">Web Designer</span>
+          </div>
+        </div>
+        <span class="Arrow previous" onclick="controlar(-1)">&#8249;</span>
+        <span class="Arrow next" onclick="controlar(1)">&#8250;</span>
+      </div>
+      <div class="container">
+        <div class="like_section row">
+          <div class="like_box">
+            <img src="/static/img/design1.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="design">
+            <span class="like_heart_1">Like <i class="fa-solid fa-heart"></i></span>
+          </div>
+          <div class="like_box">
+            <img src="/static/img/design.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="design">
+            <span class="like_heart">Like <i class="fa-solid fa-heart"></i></span>
+          </div>
+          <div class="like_box">
+            <img src="/static/img/design2.jfif" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="design">
+            <span class="like_heart_1 like_heart_2">Like <i class="fa-solid fa-heart"></i></span>
+          </div>
+          <div class="Arrow_box">
+            <span class="like_arrow" onclick="ArrowControlar(1)">&#8250;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--slider-home-end--> 
+
+    <!---About-Isama--> 
+    <section class="About_isama bg-light py-5">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="isama_scetion_1">
+              <div class="isama_imgBox">
+                <img src="/static/img/icon1.png" alt="icon1">
+              </div>
+              <div class="isama_textBox">
+                <h1 class="isama_text">What about ISAMA</h1>
+                <p class="isama_description">ISAMA is a marketing foundation located in Riyadh built on the Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis est officia eveniet eligendi! Sit, similique doloribus incidunt atque voluptate aspernatur?</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="isama_scetion_1">
+              <div class="isama_imgBox">
+                <img src="/static/img/icon2.png" alt="icon2">
+              </div>
+              <div class="isama_textBox">
+                <h1 class="isama_text">What about ISAMA</h1>
+                <p class="isama_description">ISAMA is a marketing foundation located in Riyadh built on the Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis est officia eveniet eligendi! Sit, similique doloribus incidunt atque voluptate aspernatur?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--About-Isama-end--> 
+
+    <!--what-we-do-->
+    <section class="What_we_section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="what_do mb-5 text-center">
+              <div class="what_we_imgBox">
+                <img src="/static/img/icon3.png" alt="icon3">
+              </div>
+              <div class="what_we_textBox">
+                <h3 class="what_title">What we do ?</h3>
+                <p class="what_description">Everything you need to do business intelligence right.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {% for n in ServiceData %}
+          
+          <div class="col-lg-6 mb-4">
+            <div class="isama_scetion_1">
+              <div class="isama_imgBox">
+                <img src="/static/img/icon4.png" alt="icon4" class="{{n.Icon}}">
+              </div>
+              <div class="isama_textBox">
+                <h1 class="isama_text">{{n.Title}}</h1>
+                <p class="isama_description">{{n.Description | safe}}</p>
+              </div>
+            </div>
+          </div>
+          {%empty%}
+          data is not pound!
+          {% endfor %}
+          {% comment %} <div class="col-lg-6 mb-4">
+            <div class="isama_scetion_1">
+              <div class="isama_imgBox">
+                <img src="/static/img/icon5.png" alt="icon5" class="{{n.Icon}}">
+              </div>
+              <div class="isama_textBox">
+                <h1 class="isama_text">Mobile Applications</h1>
+                <p class="isama_description">Our Developers helps you to Design, Develop & Distribute Mobile</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="isama_scetion_1">
+              <div class="isama_imgBox">
+                <img src="/static/img/icon6.png" alt="icon6">
+              </div>
+              <div class="isama_textBox">
+                <h1 class="isama_text">Software Solutions</h1>
+                <p class="isama_description">with our software for professional services and consulting firm</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="isama_scetion_1">
+              <div class="isama_imgBox">
+                <img src="/static/img/icon7.png" alt="icon7">
+              </div>
+              <div class="isama_textBox">
+                <h1 class="isama_text">Interior Design</h1>
+                <p class="isama_description">We offer a variety of design services ranging from Full Service</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="isama_scetion_1">
+              <div class="isama_imgBox">
+                <img src="/static/img/icon8.png" alt="icon8">
+              </div>
+              <div class="isama_textBox">
+                <h1 class="isama_text">Branding</h1>
+                <p class="isama_description">We have our forte in advertising and Brand establishment. We cr</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="isama_scetion_1">
+              <div class="isama_imgBox">
+                <img src="/static/img/icon9.png" alt="icon9">
+              </div>
+              <div class="isama_textBox">
+                <h1 class="isama_text">SEO & Web Marketing Services</h1>
+                <p class="isama_description">We offer a variety of design services ranging from Full Service</p>
+              </div>
+            </div>
+          </div> {% endcomment %}
+        </div>
+      </div>
+    </section>
+    <!--what-we-do-end-->
+
+    <!--marquee tag-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+
+          <marquee behavior="" direction="left" onmouseover="stop()" onmouseout="start()">
+
+            {% for news in NewsData %}
+            <a href="/News-Us/{{news.autoslug}}" class="mar_title">{{news.Title}} </a>&nbsp;
+            {% endfor %}
+            
+          </marquee>
+
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+    </div>
+    <!--marquee tag-->
+
+    <!--Our Projects--> 
+    <section class="Our_Projects py-5">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <div class="what_do project_section mb-5 text-center">
+              <div class="what_we_imgBox project_imgBox">
+                <img src="/static/img/icon10.png" alt="icon10">
+              </div>
+              <div class="what_we_textBox project_textBox">
+                <h3 class="what_title project_title">Our Projects</h3>
+                <p class="what_description project_description">Some of our awesome work Proud of doing <br> great works for our cli</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="project_nav">
+              <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <button class="nav-link tabButton" id="defaultOpen" href="#" onclick="ProjectTab(event, 'All')" >All</button>
+                </li>
+                <li class="nav-item ">
+                    <button class="nav-link tabButton" href="#" onclick="ProjectTab(event, 'Mobile')">Mobile Apps</button>
+                </li>
+                <li class="nav-item ">
+                  <button class="nav-link tabButton" href="#" onclick="ProjectTab(event, 'Identities')">Identities</button>
+                </li>
+                <li class="nav-item ">
+                  <button class="nav-link tabButton" href="#" onclick="ProjectTab(event, 'Interior')">Interior Design</button>
+                </li>
+                <li class="nav-item ">
+                  <button class="nav-link tabButton" href="#" onclick="ProjectTab(event, 'UI/UX')">UI/UX</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="projects_items" id="All">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img1.png" alt="img1">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img2.png" alt="img2">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img3.png" alt="img3">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img4.png" alt="img4">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img5.png" alt="img5">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img6.png" alt="img6">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img7.png" alt="img7">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img2.png" alt="img2">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects_items" id="Mobile">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img3.png" alt="img3">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img4.png" alt="img4">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img5.png" alt="img5">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img6.png" alt="img6">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img7.png" alt="img7">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects_items" id="Identities">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img1.png" alt="img1">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img6.png" alt="img6">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img7.png" alt="img7">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img5.png" alt="img5">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects_items" id="Interior">
+          <div class="row ">
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img1.png" alt="img1">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img7.png" alt="img7">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img4.png" alt="img4">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img3.png" alt="img3">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img5.png" alt="img5">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="projects_items" id="UI/UX">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img1.png" alt="img1">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img7.png" alt="img7">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img2.png" alt="img2">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img5.png" alt="img5">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img3.png" alt="img3">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img6.png" alt="img6">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/img4.png" alt="img4">
+                <div class="All_iconBox">
+                  <i class="fa-solid fa-link"></i>
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Our Projects-end--> 
+
+    <!--our team section-->
+    <section class="our_team_section py-5">
+      <div class="container">
+        <div class="row mb-2 ">
+          <div class="col-lg-12">
+            <div class="what_do project_section mb-5 text-center">
+              <div class="what_we_imgBox project_imgBox">
+                <img src="/static/img/T-icon.png" alt="T-icon10">
+              </div>
+              <div class="what_we_textBox project_textBox">
+                <h3 class="what_title project_title">Meet Our Team</h3>
+                <p class="what_description project_description">We have highly qualified staff with distinguished significant <br> experiance theair fields who work under pressuer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="team_members">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/T-img1.png" alt="T-img">
+                <h4 class="imgName text-center">Tamer</h4>
+                <h6 class="imgDescription text-center lead">Senior Software Engineer</h6>
+                <div class="All_iconBox">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/T-img2.png" alt="T-img">
+                <h4 class="imgName text-center">Hazem</h4>
+                <h6 class="imgDescription text-center lead">PHP Developer</h6>
+                <div class="All_iconBox">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/T-img3.png" alt="T-img">
+                <h4 class="imgName text-center">Mohammed</h4>
+                <h6 class="imgDescription text-center lead">PHP Developer</h6>
+                <div class="All_iconBox">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="All_imgbox">
+                <img src="/static/img/T-img4.png" alt="T-img">
+                <h4 class="imgName text-center">Ahmed</h4>
+                <h6 class="imgDescription text-center lead">UI/UX Designer</h6>
+                <div class="All_iconBox">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--our team section-->
+
+    <!--location section-->
+    <section class="location_section pt-5">
+      <div class="container-fluids">
+        <div class="selection_location ">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d7955.77672596208!2d90.43084166414161!3d23.711299251730814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3755b9cbce953a15%3A0xa1a4fdbef61d89e8!2z4Kau4KeH4Kef4KawIOCmruCni-CmueCmvuCmruCnjeCmruCmpiDgprngpr7gpqjgpr_gpqsg4Kar4KeN4Kay4Ka-4KaH4KaT4Kat4KeH4KawLCDgpqLgpr7gppXgpr4!3m2!1d23.7099936!2d90.4344419!5e0!3m2!1sbn!2sbd!4v1656355330593!5m2!1sbn!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="All_iconBox">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--location section end-->
+{% endblock content %}

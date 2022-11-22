@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!--contact-us-->
+<section class="contact_us_section">
+    <div class="location_section pt-5">
+        <div class="container">
+            <div class="row">
+                <!--<form action="" method="get">
+                    <div>
+                        <label for="">num1</label>
+                        <input type="text" name="num1" class="form-control">
+                    </div>
+                    <div>
+                        <label for="">num2</label>
+                        <input type="text" name="num2" class="form-control">
+                    </div>
+                    <div class="py-4">
+                        <input type="submit"class="btn-outline-info px-2">
+                    </div>
+                    <div>
+                        <label for="">output</label>
+                        <input type="text" value="{{output}}" >
+                    </div>
+                </form>-->
+                <form action="{% url 'submitform' %}" method="post">
+                    {% csrf_token %}
+                    {{form}}
+                    <!--
+                    <div>
+                        <label for="">num1</label>
+                        <input type="text" name="num1" value="{{n1}}" class="form-control">
+                    </div>
+                    <div>
+                        <label for="">num2</label>
+                        <input type="text" name="num2" value="{{n1}}" class="form-control">
+                    </div>-->
+                    <div class="py-4">
+                        <input type="submit"class="btn-outline-info px-2">
+                    </div>
+                    <div>
+                        <label for="">output</label>
+                        <input type="text" value="{{output}}" >
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+</section>
+<!--contact-us end-->
+
+{% endblock content %}

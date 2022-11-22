@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<!--contact-us-->
+    <section class="contact_us_section">
+        <div class="location_section pt-5">
+            <div class="container-fluids">
+              <div class="selection_location ">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d7955.77672596208!2d90.43084166414161!3d23.711299251730814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3755b9cbce953a15%3A0xa1a4fdbef61d89e8!2z4Kau4KeH4Kef4KawIOCmruCni-CmueCmvuCmruCnjeCmruCmpiDgprngpr7gpqjgpr_gpqsg4Kar4KeN4Kay4Ka-4KaH4KaT4Kat4KeH4KawLCDgpqLgpr7gppXgpr4!3m2!1d23.7099936!2d90.4344419!5e0!3m2!1sbn!2sbd!4v1656355330593!5m2!1sbn!2sbd" width="100%" height="750" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="All_iconBox">
+                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-twitter"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div class="contact_us">
+                    <div class="form_section">
+                        <div class="form_imgBox">
+                            <img src="/static/img/form.jpg" alt="contact">
+                            <h3 class="form_title">Contact Us</h3>
+                            <span class="form_description">Feel free to drop us a line below!</span>
+                        </div>
+                        <div class="form_box">
+                            <h3 class="msg">{{n}}</h3>
+                            <form class="row g-3 needs-validation" action="{% url 'Submited' %}" method="post" novalidate>
+                              {% csrf_token %}
+                              <div class="col-md-12">
+                                <label for="validationCustom01" class="form-label">First name</label>
+                                <input type="text" class="form-control" id="validationCustom01" name="Fname" value="Mark" required>
+                                <div class="valid-feedback">
+                                  Looks good!
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <label for="validationCustom02" class="form-label">Last name</label>
+                                <input type="text" class="form-control" id="validationCustom02" name="Lname" value="john" required>
+                                <div class="valid-feedback">
+                                  Looks good!
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <label for="validationCustom03" class="form-label" >Phone</label>
+                                <input type="phone" placeholder="+8801*********" class="form-control" id="validationCustom03" name="phone" required>
+                                <div class="invalid-feedback">
+                                  Please provide a valid city.
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <label for="validationCustom03" class="form-label">G-mail</label>
+                                <input type="mail" placeholder="Example@gmail.com" class="form-control" id="validationCustom03" name="mail" required>
+                                <div class="invalid-feedback">
+                                  Please provide a valid city.
+                                </div>
+                              </div>
+                              <div class="col-md-12">
+                                <label for="validationCustom03" class="form-label">Message</label>
+                                <textarea class="form-control" id="" rows="3" placeholder="message" name="message"></textarea>
+
+                                <div class="invalid-feedback">
+                                  Please provide a valid city.
+                                </div>
+                              </div>
+                              <div class="col-12">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                  <label class="form-check-label box" for="invalidCheck">
+                                    Agree to terms and conditions
+                                  </label>
+                                  <div class="invalid-feedback">
+                                    You must agree before submitting.
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Submit<i class="fa-solid fa-arrow-right ml-2"></i></button>
+                              </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <!--contact-us end-->
+{% endblock content %}

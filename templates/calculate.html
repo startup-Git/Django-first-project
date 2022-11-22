@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="title text-center center">Calculate</h1>
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <label for="">value 1</label>
+                    <input type="text" name="value_1" value="{{n1}}" class="form-control">
+
+                    <label for="">select your Operator</label>
+                    <select name="operator" id="" class="form-control">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+
+                    <label for="">value 2</label>
+                    <input type="text" name="value_2" value="{{n2}}" class="form-control mb-2">
+
+                    <input type="submit" class="btn-outline-info btn-lg mb-2"><br>
+
+                    <label for="">output</label>
+                    <input type="text" value="{{c}}" class="form-control mt-2">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
